@@ -1,0 +1,33 @@
+<!-- <form #addNoteForm="ngForm" (ngSubmit)="addNote(addNoteForm)" class="add-note-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Note Title" value="">
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Write your note"></textarea>
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="StickyDate" value="">
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Status" value="Incomplete">
+  </mat-form-field><br>
+
+  <button>Add</button>
+
+</form> -->
+
+<h1>Add a new note</h1>
+<form #f="ngForm" (ngSubmit)="addNote(f)" novalidate>
+  <label>Title:</label> <input name="title" ngModel required #first="ngModel"><br>
+  <label>Note:</label> <input name="note" ngModel><br>
+  <label>StickyDate:</label> <input name="stickydate" ngModel><br>
+  <br><button>Submit</button>
+</form>
+
+<p>First name value: {{ first.value }}</p>
+<!-- <p>First name valid: {{ first.valid }}</p> -->
+<p>Form value: {{ f.value | json }}</p>
+<p>Form valid: {{ f.valid }}</p>

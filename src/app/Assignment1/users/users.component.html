@@ -1,0 +1,19 @@
+<div id="userPostResults">
+  <h1>List of Users</h1>
+
+<span *ngFor="let user of response_all">
+
+  <b>Id: </b> {{user.id}}
+  <b>Name: </b> {{user.name}}
+  <b>Username: </b> {{user.username}}
+  <b>Email: </b> {{user.email}}
+  <br>
+
+  <!-- <a [routerLink]="['/child']" routerLinkActive="router-link-active" >View posts</a> -->
+  
+  <!-- <app-child [childMessage1]="variableNameInParentComponent"></app-child> -->
+<button (click)='viewPosts(user.id)'>View Posts</button>
+  <br>
+  <br>
+</span>
+</div>

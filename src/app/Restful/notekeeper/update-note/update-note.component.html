@@ -1,0 +1,12 @@
+<h1>Update your note</h1>
+<form #f="ngForm" (ngSubmit)="updateNote(f)" novalidate>
+  <label>Title:</label> <input name="title" [value]="noteToUpdate.title" ngModel required #first="ngModel"><br>
+  <label>Note:</label> <input name="note" value='test' ngModel><br>
+  <label>StickyDate:</label> <input name="stickydate" value=noteToUpdate.stickydate ngModel><br>
+  <br><button>Submit</button>
+</form>
+
+<p>Current Title: {{ noteToUpdate.title }}</p>
+<!-- <p>First name valid: {{ first.valid }}</p> -->
+<p>Current Note: {{ noteToUpdate.note }}</p>
+<p>Current date: {{ noteToUpdate.stickydate }}</p>

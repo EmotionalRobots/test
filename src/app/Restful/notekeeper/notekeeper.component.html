@@ -1,0 +1,23 @@
+<a  [routerLink]="['/addNote']">Add a note</a>
+
+
+<button (click)='check()'>Check</button>
+
+<span *ngFor='let note of notes; let i = index;'>
+  <div class=note id=note{{note.note_id}}>
+    Id: {{note.note_id}} <br>
+    Title: {{note.title}}<br>
+    Note:{{note.note}}<br>
+    Date:{{note.stickydate}}<br>
+    <div> Status:{{note.status}} </div><br>
+    <div *ngIf="note.status !== 'completed'">
+      <div>Completed: <input type="checkbox" (click)='refresh(note.note_id)'>
+      </div>
+      <button id=updateBtn (click)='onUpdate(note.note_id, note.title, note.note, note.stickydate)'>Update Note</button>
+
+    </div>
+    <button id=deleteBtn (click)='onDelete(note.note_id)'>Delete Note</button>
+
+  </div>
+  <br>
+</span>

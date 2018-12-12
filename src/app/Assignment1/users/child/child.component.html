@@ -1,0 +1,16 @@
+<h1>List of all Posts by User {{myId}}</h1>
+
+Filter: <input type="number" (input)="onFilterChange()" [(ngModel)]="myFilterValue"><button
+  (click)="clear()">Clear</button>
+
+<br>
+{{myFilterValue}}
+<br>
+
+
+<p>
+  <span *ngFor='let post of filteredList'>
+    <b>User id:</b> {{post.userId}}<br> <b>Post id:</b> {{post.id}}<br> <b>Post:</b>{{post.title}}<br> <b>Body:</b>{{post.body}}<br><br><br>
+  </span>
+</p>
+<!-- {{myId}} -->
